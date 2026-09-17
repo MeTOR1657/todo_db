@@ -5,4 +5,6 @@ import { connectionString } from "@db/utils.js";
 
 export const dbConn = postgres(connectionString);
 
-export const dbClient = drizzle(dbConn, { schema: schema, logger: true });
+export const dbClient = drizzle(dbConn, { schema });
+
+export type DbClient = typeof dbClient;
